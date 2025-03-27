@@ -2,6 +2,10 @@ import Greeting from "./Greeting";
 import Counter from "./Counter";
 import LoginPanel from "./LoginPanel";
 import DarkModeToggle from "./DarkModeToggle";
+import GreetingMessage from "./GreetingMessage";
+import FruitList from "./FruitList";
+import TaskList from "./TaskList";
+import BookList from './BookList';
 export default function App() {
   const name = "Alice";
   return (
@@ -14,6 +18,10 @@ export default function App() {
       <p>Teacher</p>
       <LoginPanel />
       <DarkModeToggle />
+      <GreetingMessage />
+      <FruitList/>
+      <TaskList/>
+      <BookList />
     </>
   );
 }
