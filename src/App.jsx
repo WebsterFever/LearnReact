@@ -6,6 +6,7 @@ import GreetingMessage from "./GreetingMessage";
 import FruitList from "./FruitList";
 import TaskList from "./TaskList";
 import BookList from './BookList';
+import NameForm from "./NameForm";
 export default function App() {
   const name = "Alice";
   return (
@@ -22,6 +23,7 @@ export default function App() {
       <FruitList/>
       <TaskList/>
       <BookList />
+      <NameForm/>
     </>
   );
 }
