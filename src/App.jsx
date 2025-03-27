@@ -1,6 +1,7 @@
 import Greeting from "./Greeting";
 import Counter from "./Counter";
 import LoginPanel from "./LoginPanel";
+import DarkModeToggle from "./DarkModeToggle";
 export default function App() {
   const name = "Alice";
   return (
@@ -12,6 +13,7 @@ export default function App() {
       <h1>Webster</h1>
       <p>Teacher</p>
       <LoginPanel />
+      <DarkModeToggle />
     </>
   );
 }
