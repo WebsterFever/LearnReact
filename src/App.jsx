@@ -1,29 +1,28 @@
-import Greeting from "./Greeting";
-import Counter from "./Counter";
-import LoginPanel from "./LoginPanel";
-import DarkModeToggle from "./DarkModeToggle";
-import GreetingMessage from "./GreetingMessage";
-import FruitList from "./FruitList";
-import TaskList from "./TaskList";
-import BookList from './BookList';
-import NameForm from "./NameForm";
-export default function App() {
-  const name = "Alice";
+import { useState } from 'react';
+import Header from './components/Header';
+import AddBookForm from './components/AddBookForm';
+import BookList from './components/BookList';
+import Footer from './components/Footer';
+
+function App() {
+  const [books, setBooks] = useState([]);
+
+  const handleAddBook = (book) => {
+    setBooks([book, ...books]);
+  };
+
+  const handleRemoveBook = (id) => {
+    setBooks(books.filter((book) => book.id !== id));
+  };
+
   return (
-    <>
-      <Greeting firstName="Jean" lastName="Marc" />
-      <Greeting firstName="Bob" lastName="Riviere" />
-      <Counter />
-      <h1>Hello, {name}</h1>
-      <h1>Webster</h1>
-      <p>Teacher</p>
-      <LoginPanel />
-      <DarkModeToggle />
-      <GreetingMessage />
-      <FruitList/>
-      <TaskList/>
-      <BookList />
-      <NameForm/>
-    </>
+    <div>
+      <Header />
+      <AddBookForm onAdd={handleAddBook} />
+      <BookList books={books} onRemove={handleRemoveBook} />
+      <Footer />
+    </div>
   );
 }
+
+export default App;
